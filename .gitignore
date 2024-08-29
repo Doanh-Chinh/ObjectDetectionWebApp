@@ -1,0 +1,15 @@
+# User-specific configuration files
+OnnxObjectDetectionWeb/appsettings.json
+OnnxObjectDetectionWeb/Properties/launchSettings.json
+
+# Other
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+*.pdb
+*.obj
+
+**bin/
+**obj/

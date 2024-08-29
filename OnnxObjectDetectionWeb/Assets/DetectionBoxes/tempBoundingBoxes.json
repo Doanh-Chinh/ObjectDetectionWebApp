@@ -1,0 +1,57 @@
+[
+  {
+    "DetectionBoxId": 0,
+    "Label": "dog",
+    "Confidence": 0.7714287,
+    "X": 92.577255,
+    "Y": 230.802,
+    "Height": 136.37462,
+    "Width": 90.118774,
+    "ImageId": 4,
+    "ModifiedDate": "2024-08-29T10:29:36.3446867+07:00"
+  },
+  {
+    "DetectionBoxId": 0,
+    "Label": "dog",
+    "Confidence": 0.7661172,
+    "X": 215.6987,
+    "Y": 207.94745,
+    "Height": 129.43312,
+    "Width": 65.82527,
+    "ImageId": 4,
+    "ModifiedDate": "2024-08-29T10:29:36.3446949+07:00"
+  },
+  {
+    "DetectionBoxId": 0,
+    "Label": "person",
+    "Confidence": 0.7205521,
+    "X": 332.73257,
+    "Y": 123.30522,
+    "Height": 174.7797,
+    "Width": 44.770996,
+    "ImageId": 4,
+    "ModifiedDate": "2024-08-29T10:29:36.3446954+07:00"
+  },
+  {
+    "DetectionBoxId": 0,
+    "Label": "person",
+    "Confidence": 0.6617962,
+    "X": 82.943436,
+    "Y": 109.70306,
+    "Height": 186.94124,
+    "Width": 59.242397,
+    "ImageId": 4,
+    "ModifiedDate": "2024-08-29T10:29:36.3446957+07:00"
+  },
+  {
+    "DetectionBoxId": 0,
+    "Label": "dog",
+    "Confidence": 0.58639985,
+    "X": 76.91001,
+    "Y": 220.72385,
+    "Height": 155.73218,
+    "Width": 84.8569,
+    "ImageId": 4,
+    "ModifiedDate": "2024-08-29T10:29:36.3446961+07:00"
+  }
+]

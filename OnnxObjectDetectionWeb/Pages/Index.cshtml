@@ -1,0 +1,171 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is a Object Detection Web app with ASP.Net Core</p>
+</div>
+
+@section Scripts {
+    <script src="~/js/PostImages.js"></script>
+}
+
+
+<style>
+
+
+    /* Custom styles for the new layout */
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+
+    #resultImagediv {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: auto;
+        height: auto;
+        display: inline-block;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+    #result {
+        max-width: 100%;
+        max-height: 100%;
+        border: 1px solid #444;
+        border-radius: 10px;
+        padding: 10px;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+    #imagesUL {
+        list-style-type: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+        #imagesUL img {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+            #imagesUL img.active {
+                border: 1px solid #ddd;
+            }
+
+    .file-upload {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        text-align: center;
+        background-color: #33a4ff;
+        color: #fff;
+        border: none;
+        padding: 5px 5px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 130px;
+    }
+
+        .btn:hover {
+            background-color: #ffe433;
+        }
+
+    .button-group {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+        .button-group button {
+            margin: 10px;
+        }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-4 file-upload">
+            <form method="post" enctype="multipart/form-data">
+                <h5>Try uploading your own images</h5>
+                <input type="file" name="imageFile">                
+                <input type="submit" value="Upload File" name="submit" class="btn">
+            </form>
+
+        </div>
+
+        <div class="col-md-4" style="text-align: center">
+            <h5>Processed Image</h5>
+            <div id="resultImagediv">
+                <img id="result" />
+            </div>
+        </div>
+
+        <div class="col-md-4 button-group">
+            <h5>Processing in Database</h5>
+
+            <form id="saveForm" method="post" enctype="multipart/form-data" action="/api/DetectionBox/CreateDetectionBoxes">
+                <input type="submit" value="Save detection" name="submit" class="btn">
+            </form>
+
+            <form id="readForm" method="get">
+                <input type="submit" value="Read detection" name="submit" class="btn">
+            </form>
+
+            <form id="deleteForm" enctype="multipart/form-data">
+                <input type="submit" class="btn" value="Delete detection">
+            </form>
+
+            <form id="updateForm" enctype="multipart/form-data">
+                <input type="submit" class="btn" value="Update detection">
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <h5>Input Images</h5>
+
+            <ul id="imagesUL" style="display: flex; justify-content: center; list-style-type: none; padding: 0;">
+                <li style="margin: 0 10px;">
+                    <img class="input-image" src="~/ImagesList/image1.jpg" alt="Sample Photo" height="100" width="100" />
+                </li>
+                <li style="margin: 0 10px;">
+                    <img class="input-image" src="~/ImagesList/image2.jpg" alt="Sample Photo" height="100" width="100" />
+                </li>
+                <li style="margin: 0 10px;">
+                    <img class="input-image" src="~/ImagesList/image3.jpg" alt="Sample Photo" height="100" width="100" />
+                </li>
+                <li style="margin: 0 10px;">
+                    <img class="input-image" src="~/ImagesList/image4.jpg" alt="Sample Photo" height="100" width="100" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.getElementById("readForm").action = "/api/DetectionBox/GetDetectionBoxByImageId/-1";
+    document.getElementById("deleteForm").action = "/api/DetectionBox/DeleteDetectionBox/-1";
+    document.getElementById("updateForm").action = "/api/DetectionBox/UpdateDetectionBoxes/-1";
+</script>
+
+
+
+
+
